@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+output/
+*.js.map
+*.d.ts
+!nest-cli.json

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            line-height: 1.3;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 22pt;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 3px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .tagline {
+            text-align: center;
+            font-size: 10.5pt;
+            font-style: italic;
+            margin-bottom: 4px;
+            color: #333;
+        }
+        .contact {
+            text-align: center;
+            font-size: 10pt;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .contact a {
+            color: #000;
+            text-decoration: none;
+        }
+        .summary {
+            font-size: 10.5pt;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+        .section-title {
+            font-size: 11pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid #000;
+            margin-top: 14px;
+            margin-bottom: 8px;
+            padding-bottom: 2px;
+        }
+        .skills-content {
+            font-size: 10.5pt;
+            line-height: 1.5;
+        }
+        .item {
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+        .item-title {
+            font-weight: bold;
+            font-size: 11pt;
+        }
+        .item-date {
+            font-size: 10pt;
+            white-space: nowrap;
+        }
+        .item-subheader {
+            font-style: italic;
+            font-size: 10pt;
+            margin-bottom: 4px;
+        }
+        ul {
+            margin-top: 4px;
+            margin-bottom: 0;
+            padding-left: 18px;
+        }
+        li {
+            font-size: 10.5pt;
+            margin-bottom: 3px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>{{name}}</h1>
+    {{#if title}}<div class="tagline">{{title}}</div>{{/if}}
+    <div class="contact">
+        {{contact.phone}} &#x22C4; {{contact.email}}
+        {{#if contact.location}} &#x22C4; {{contact.location}}{{/if}}
+        {{#if contact.linkedin}} &#x22C4; <a href="{{contact.linkedin}}">LinkedIn</a>{{/if}}
+        {{#if contact.github}} &#x22C4; <a href="{{contact.github}}">GitHub</a>{{/if}}
+    </div>
+
+    <div class="section-title">Professional Summary</div>
+    <div class="summary">{{summary}}</div>
+
+    <div class="section-title">Core Skills</div>
+    <div class="skills-content">{{skillsList}}</div>
+
+    <div class="section-title">Work Experience</div>
+    {{#each experience}}
+    <div class="item">
+        <div class="item-header">
+            <div class="item-title">{{this.title}}</div>
+            <div class="item-date">{{this.duration}}</div>
+        </div>
+        <div class="item-subheader">{{this.company}}</div>
+        <ul>
+            {{#each this.achievements}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </div>
+    {{/each}}
+
+    {{#if projects.length}}
+    <div class="section-title">Projects</div>
+    {{#each projects}}
+    <div class="item">
+        <div class="item-header">
+            <div class="item-title">{{this.name}}</div>
+        </div>
+        {{#if this.description}}
+        <div class="item-subheader">{{this.description}}</div>
+        {{/if}}
+        <ul>
+            {{#each this.achievements}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </div>
+    {{/each}}
+    {{/if}}
+
+    <div class="section-title">Education</div>
+    {{#each education}}
+    <div class="item">
+        <div class="item-header">
+            <div class="item-title">{{this.degree}}</div>
+            <div class="item-date">{{this.year}}</div>
+        </div>
+        <div class="item-subheader">{{this.institution}}</div>
+    </div>
+    {{/each}}
+
+    {{#if certifications.length}}
+    <div class="section-title">Certifications</div>
+    <ul>
+        {{#each certifications}}
+        <li><span style="font-weight:bold;">{{this.name}}</span> — {{this.issuer}} ({{this.year}})</li>
+        {{/each}}
+    </ul>
+    {{/if}}
+
+</body>
+</html>

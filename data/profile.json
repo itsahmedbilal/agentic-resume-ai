@@ -1,0 +1,249 @@
+{
+  "name": "Ahmed Bilal",
+  "title": "Senior Full Stack Engineer (JavaScript / TypeScript)",
+  "summary": "Senior Full Stack Engineer with 5+ years of experience building scalable, high-performance web applications and distributed systems. Strong expertise in Angular, React, Node.js, and microservices architecture, with a proven ability to modernize legacy systems, implement real-time event-driven solutions, and improve developer productivity. Experienced in enterprise-grade environments, delivering secure and reliable applications with high test coverage, clean architecture, and strong engineering standards.",
+  "contact": {
+    "email": "ahmedbillal8@gmail.com",
+    "phone": "+92 332 5444838",
+    "linkedin": "https://linkedin.com/in/itsahmedbilal",
+    "github": "https://github.com/itsahmedbilal",
+    "location": "Islamabad Capital Territory, Pakistan (Open to Relocate)"
+  },
+  "skills": {
+    "languages": [
+      "JavaScript (ES6+)",
+      "TypeScript",
+      "Python"
+    ],
+    "frameworks": [
+      "Angular",
+      "React.js",
+      "Vue.js",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "FastAPI",
+      "Redux",
+      "RxJS",
+      "NgRx",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Angular Material",
+      "Sass",
+      "LESS"
+    ],
+    "tools": [
+      "Jest",
+      "Jasmine",
+      "Cypress",
+      "Docker",
+      "Kubernetes",
+      "Solace",
+      "BullMQ",
+      "Sequelize ORM",
+      "Webpack",
+      "Build Tools",
+      "Git"
+    ],
+    "cloud": [
+      "AWS",
+      "AWS Amplify",
+      "Azure DevOps"
+    ],
+    "databases": [
+      "MongoDB",
+      "PostgreSQL",
+      "MSSQL",
+      "Redis"
+    ]
+  },
+  "experience": [
+    {
+      "company": "MobileLIVE (Remote – Canada)",
+      "title": "Senior Full Stack Engineer",
+      "duration": "May 2021 – Present",
+      "techStack": [
+        "React",
+        "Next.js",
+        "Angular",
+        "Redux",
+        "RxJS",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "Express",
+        "BullMQ",
+        "Redis",
+        "Solace",
+        "FastAPI",
+        "Docker",
+        "MongoDB",
+        "Jest"
+      ],
+      "achievements": [
+        "Delivered scalable solutions across multiple banking platforms, improving team productivity by 30% through architectural and workflow enhancements.",
+        "Built and maintained design systems and reusable component libraries, improving development efficiency by 25% and ensuring cross-application consistency.",
+        "Implemented micro-frontend architecture, enabling independent feature development and faster deployments.",
+        "Developed server-side rendering (SSR) capabilities, improving performance and SEO.",
+        "Designed and implemented complex multi-step dynamic forms and workflow systems, streamlining customer onboarding processes.",
+        "Integrated RESTful APIs and optimized frontend-backend communication.",
+        "Replaced legacy bot-based workflows with real-time event-driven systems using message queues (Solace), enabling real-time account opening.",
+        "Led transition from monolithic architecture to microservices, improving scalability by 50%.",
+        "Developed backend microservices using Node.js and Express, with MongoDB change streams for real-time data synchronization.",
+        "Achieved 86%+ test coverage using Jest, significantly improving system reliability.",
+        "Mentored junior engineers and enforced clean code and architectural standards across the team.",
+        "Authored technical documentation for design systems, reducing onboarding time and improving collaboration across teams.",
+        "Led frontend development for CIBC/Simplii Digital Core Banking platform with multi-step dynamic forms for account opening, mortgage onboarding, and AML/CAMLR compliance.",
+        "Developed real-time microservice processing dashboard for ASG – ISBO / Student Deposit Program using Solace and MongoDB Change Streams.",
+        "Architected complex, multi-step onboarding workflows leveraging Redux and RxJS orchestration, consistently maintaining Lighthouse performance scores above 95.",
+        "Engineered event-driven microservices utilizing Solace and Node.js, slashing backend processing latency by 50% and enabling highly-available real-time data streaming.",
+        "Bolstered platform reliability by driving test coverage to 86% and integrating automated end-to-end (E2E) testing pipelines into the CI/CD lifecycle.",
+        "Accelerated team velocity and productivity by 30% by establishing rigorous clean code standards and conducting comprehensive technical mentorship."
+      ]
+    },
+    {
+      "company": "Baskt (Pakistan)",
+      "title": "Frontend Developer",
+      "duration": "Jun 2019 – May 2021",
+      "techStack": [
+        "Angular",
+        "TypeScript",
+        "RxJS",
+        "NgRx",
+        "HTML5",
+        "CSS3",
+        "Bootstrap",
+        "Jest",
+        "Cypress",
+        "Node.js",
+        "Express.js"
+      ],
+      "achievements": [
+        "Led migration from Angular 2+ to latest Angular versions, improving performance and system stability.",
+        "Implemented test-driven development (TDD) practices across frontend and backend.",
+        "Refactored legacy codebase following clean architecture (John Papa guidelines), improving performance by 25% and maintainability by 30%.",
+        "Developed full-stack features using Angular, Node.js, and Express.js.",
+        "Improved code quality through strong TypeScript adoption, reducing bugs and increasing maintainability.",
+        "Collaborated closely with design teams to deliver high-quality, user-focused UI/UX.",
+        "Orchestrated the end-to-end migration of a legacy platform to the newest Angular ecosystem, resulting in a 25-30% improvement in core web vitals and overall system stability.",
+        "Refactored the monolithic codebase following industry-standard scalable design patterns, significantly reducing technical debt and improving long-term maintainability.",
+        "Championed Test-Driven Development (TDD) by integrating Jest and Cypress, elevating deployment confidence and dramatically reducing production-level bugs.",
+        "Collaborated cross-functionally with UI/UX designers to translate complex Figma prototypes into highly responsive, accessibility-compliant user interfaces."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AgentQA – Conversational AI QA Platform",
+      "description": "A full-stack, cloud-native QA platform engineering robust pipelines for the dynamic evaluation of LLMs and conversational AI.",
+      "techStack": [
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "Redis",
+        "BullMQ",
+        "PostgreSQL",
+        "Next.js",
+        "React",
+        "Promptfoo"
+      ],
+      "achievements": [
+        "Architected a distributed execution engine utilizing Node.js, Express, and Redis/BullMQ, scaling asynchronous LLM test resolution linearly across horizontal worker nodes.",
+        "Engineered comprehensive run orchestration pipelines with advanced queueing operations (prioritization, distributed locks, pause/resume/retry workflows)—capturing high-fidelity per-turn assertion outcomes.",
+        "Integrated dynamic Promptfoo YAML generation to automate programmatic evaluations and test authoring, persisting vast testing datasets to PostgreSQL.",
+        "Constructed a robust plugin ecosystem supporting custom network/HTTP/LLM providers—facilitating on-the-fly environment variable injection and per-run dataset imports."
+      ]
+    },
+    {
+      "name": "Design System Platform",
+      "description": "Enterprise-wide design system and component library platform for standardizing UI across multiple banking applications.",
+      "techStack": [
+        "Angular",
+        "TypeScript",
+        "Sass",
+        "Angular Material",
+        "Webpack"
+      ],
+      "achievements": [
+        "Built reusable UI components and comprehensive documentation for cross-team adoption.",
+        "Standardized UI across multiple enterprise applications, ensuring visual and functional consistency.",
+        "Improved developer onboarding and reduced code duplication across banking platforms."
+      ]
+    },
+    {
+      "name": "Microservices Transformation",
+      "description": "Large-scale migration from monolithic architecture to a distributed microservices-based system for improved scalability and resilience.",
+      "techStack": [
+        "Node.js",
+        "Express",
+        "Docker",
+        "MongoDB",
+        "Solace",
+        "Redis"
+      ],
+      "achievements": [
+        "Migrated monolithic systems to distributed microservices architecture.",
+        "Enabled independent scaling and deployment of individual services.",
+        "Improved system resilience and fault isolation across the platform."
+      ]
+    },
+    {
+      "name": "Real-Time Event-Driven System",
+      "description": "Real-time event-driven processing system using messaging infrastructure and change data capture for financial workflows.",
+      "techStack": [
+        "Solace",
+        "MongoDB",
+        "Node.js",
+        "Express",
+        "TypeScript"
+      ],
+      "achievements": [
+        "Implemented asynchronous messaging with Solace and MongoDB change streams for real-time data synchronization.",
+        "Enabled real-time workflows and async processing for banking operations.",
+        "Reduced latency and improved user experience for account opening and onboarding flows."
+      ]
+    },
+    {
+      "name": "Lucky Mobility Activation Widget",
+      "description": "A reusable React/TypeScript embeddable widget guiding customers through 6-7 step prepaid activation flows with bilingual support.",
+      "techStack": [
+        "React",
+        "TypeScript",
+        "Redux",
+        "RxJS",
+        "Tailwind CSS",
+        "Express",
+        "OAuth"
+      ],
+      "achievements": [
+        "Delivered dynamic multi-step flows with Redux + RxJS epic architecture.",
+        "Implemented bilingual localization and host integration contract.",
+        "Built end-to-end local testing using Express mock API."
+      ]
+    },
+    {
+      "name": "FX Bot",
+      "description": "FastAPI for Microsoft Teams FX chatbot interactions, handling session state, multi-turn conversations, metadata extraction, and commentary blasts.",
+      "techStack": [
+        "Python",
+        "FastAPI",
+        "Redis",
+        "Docker",
+        "Kubernetes"
+      ],
+      "achievements": [
+        "Implemented async state machine workflows for commentary blasts with draft handling and confirmation flows.",
+        "Managed session state and multi-turn conversation context.",
+        "Orchestrated scalable deployments with retries, logging, and error recovery."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "institution": "National University of Computer and Emerging Sciences (FAST-NUCES), Islamabad",
+      "year": "2019"
+    }
+  ],
+  "certifications": []
+}
