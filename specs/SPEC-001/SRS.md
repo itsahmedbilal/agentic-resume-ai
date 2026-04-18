@@ -9,7 +9,7 @@
 | ------------- | ----------------------------- |
 | Document      | SRS                           |
 | Spec ID       | SPEC-001                      |
-| Version       | 1.1.0                         |
+| Version       | 1.2.0                         |
 | Date          | 2026-04-18                    |
 | Status        | Active                        |
 | Parent Source | `specs/requirements/index.md` |
@@ -22,13 +22,14 @@
 | ------- | ---------- | ----------------------------------------- | ------ |
 | 1.0.0   | 2026-04-18 | Initial SRS breakout document             | Codex  |
 | 1.1.0   | 2026-04-18 | Added formal document control and history | Codex  |
+| 1.2.0   | 2026-04-18 | Added output quality requirements for ATS and FAANG tailoring | Codex  |
 
 
 ## 1. Introduction
 
 ### 1.1 Purpose
 
-Define the required behavior of Agentic Resume AI, a single-user backend that converts a master profile and runtime job description into an ATS-optimized, two-page PDF resume.
+Define the required behavior of Agentic Resume AI, a single-user backend that converts a master profile and runtime job description into an ATS-optimized resume package (resume + submission guidance) with a 1-2 page PDF resume.
 
 ### 1.2 Scope
 
@@ -78,6 +79,11 @@ Out of scope:
 | FR-017 | System SHALL accept and persist run-level user feedback (`rating`, `comments`, `bulletsChanged`).        | T      |
 | FR-018 | System SHALL run offline evaluation over golden dataset and return aggregate report.                     | T      |
 | FR-019 | System SHALL expose health, quality, and cost observability endpoints.                                   | T      |
+| FR-020 | System SHALL enforce strict ATS-safe single-column formatting with standard section headers and no parser-hostile visual constructs. | D/T    |
+| FR-021 | System SHALL place JD-aligned keywords contextually inside achievement bullets and avoid keyword-only stuffing behavior. | T      |
+| FR-022 | System SHALL normalize achievement bullets to an action-first XYZ structure with measurable outcomes when source evidence exists. | T      |
+| FR-023 | System SHALL reorder and emphasize bullets by target company profile (`google`, `meta`, `amazon`, `apple`, `netflix`) using company-specific signals. | T      |
+| FR-024 | System SHALL return application-channel guidance recommending direct company portal submission and warning against third-party parser risk. | T      |
 
 
 ## 3. Acceptance-Critical Behaviors
@@ -97,6 +103,27 @@ Out of scope:
 
 - Output shall remain within 1-2 pages in v1 mode.
 - ATS extraction floor shall be enforced before success response.
+- Resume layout shall be single-column and parser-stable with predictable section labels (`Work Experience`, `Education`, `Skills`).
+- Rendered output shall avoid text boxes, decorative graphics, or table-based resume layout constructs.
+
+### 3.4 Keyword and Achievement Quality
+
+- JD keyword matching shall prefer in-context achievement usage over detached keyword list inflation.
+- Acronyms detected in JD should be expanded at first mention when possible (example: `Amazon Web Services (AWS)`).
+- Achievement bullets should start with strong action verbs and preserve measurable impact evidence.
+
+### 3.5 Company-Tailored Emphasis
+
+- Google profile should prioritize scale, algorithmic efficiency, and data-backed engineering decisions.
+- Meta profile should prioritize iteration speed, experimentation, and product-minded growth outcomes.
+- Amazon profile should prioritize customer impact, financial outcomes, and explicit leadership-principle alignment.
+- Apple profile should prioritize product craftsmanship, UI/UX quality, systems rigor, and privacy focus.
+- Netflix profile should prioritize ownership, senior independent execution, and high-trust decision making.
+
+### 3.6 Submission Guidance
+
+- Success payload shall include explicit recommendation to apply through the target company's official career portal.
+- Guidance shall include risk note that third-party application flows may remap formatting and date fields.
 
 ## 4. Assumptions and Risks (SRS Level)
 

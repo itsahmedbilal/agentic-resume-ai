@@ -8,7 +8,7 @@
 | --- | --- |
 | Document | API |
 | Spec ID | SPEC-001 |
-| Version | 1.1.0 |
+| Version | 1.2.0 |
 | Date | 2026-04-18 |
 | Status | Active |
 | Parent Source | `specs/requirements/index.md` |
@@ -19,6 +19,7 @@
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-04-18 | Initial API contract breakout document | Codex |
 | 1.1.0 | 2026-04-18 | Added formal document control and history | Codex |
+| 1.2.0 | 2026-04-18 | Added output quality and application guidance contract fields | Codex |
 
 ## 1. Conventions
 
@@ -47,13 +48,22 @@
   "metadata": {
     "persona": "frontend-angular",
     "detectedStack": ["Angular", "TypeScript", "RxJS"],
+    "targetCompanyProfile": "google",
     "keywordCoveragePct": 78,
     "confidenceScore": 0.82,
     "gatePassRate": 0.91,
     "flaggedCount": 1,
     "missingKeywords": ["NgRx"],
     "lowFitWarning": false,
-    "profileFitScore": 0.85
+    "profileFitScore": 0.85,
+    "qualitySignals": {
+      "atsSingleColumnPass": true,
+      "atsStandardSectionHeadersPass": true,
+      "contextualKeywordIntegrationPass": true,
+      "xyzBulletCompliancePct": 0.86,
+      "actionVerbStartPct": 0.93,
+      "acronymExpansionPass": true
+    }
   },
   "jdExtraction": {
     "requiredSkills": ["Angular", "TypeScript", "RxJS"],
@@ -62,6 +72,11 @@
     "domain": "fintech"
   },
   "strategy": "standard",
+  "submissionGuidance": {
+    "recommendedChannel": "direct_company_portal",
+    "avoidChannels": ["linkedin_easy_apply"],
+    "reason": "Third-party apply flows can reparse and remap formatting, dates, and skill taxonomy."
+  },
   "trace": { "totalDurationMs": 32400, "stages": [] },
   "cacheStats": { "hits": 3, "misses": 2, "hitRatio": 0.6 }
 }

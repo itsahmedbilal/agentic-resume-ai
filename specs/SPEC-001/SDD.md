@@ -8,7 +8,7 @@
 | --- | --- |
 | Document | SDD |
 | Spec ID | SPEC-001 |
-| Version | 1.1.0 |
+| Version | 1.2.0 |
 | Date | 2026-04-18 |
 | Status | Active |
 | Parent Source | `specs/requirements/index.md` |
@@ -19,6 +19,7 @@
 | --- | --- | --- | --- |
 | 1.0.0 | 2026-04-18 | Initial SDD breakout document | Codex |
 | 1.1.0 | 2026-04-18 | Added formal document control and history | Codex |
+| 1.2.0 | 2026-04-18 | Added output-quality enforcement design and submission guidance flow | Codex |
 
 ## 1. Architecture Overview
 
@@ -43,11 +44,16 @@
 | Document Grader | variant selection, scoring, top-N ranking |
 | Bullet Merge | semantic consolidation when role bullet limits are exceeded |
 | Bullet Rewriter | LLM rewriting with strict prompt constraints |
+| Achievement Normalizer | enforce action-first XYZ achievement structure and measurable impact phrasing |
+| Keyword Contextualizer | inject JD-aligned terms into evidence-backed bullet context, not detached stuffing |
+| Company Tailor | reorder and prioritize bullets by target company profile signals |
 | Content Guard | 4-gate validation and confidence scoring |
 | Profile Filter | assemble final profile, role/project pruning, dynamic title |
 | Summary Rewriter | persona-specific summary adaptation |
 | PDF Generator | render ATS-safe PDF via Handlebars + Puppeteer |
+| Layout Guard | enforce single-column ATS-safe structure and section-header contract |
 | Output Guard | enforce final quality and ATS compliance checks |
+| Submission Guidance Generator | emit apply-channel recommendation and parser-risk warning metadata |
 | Semantic Cache | prompt-hash deduplication for LLM calls |
 | Memory Service | episodic memory + high-confidence example persistence |
 | Observability Services | health, quality, cost, trace metrics |
@@ -89,12 +95,16 @@ Primary collections:
 8. Bullet grading and variant selection
 9. Optional bullet merge
 10. Rewrite and validation per bullet
-11. Profile and project filtering
-12. Summary rewrite
-13. PDF generation
-14. Output guard checks
-15. Memory persistence
-16. Response assembly
+11. Achievement normalization (XYZ + action-verb checks)
+12. Keyword contextualization checks and acronym expansion
+13. Company-tailored ranking/reordering
+14. Profile and project filtering
+15. Summary rewrite
+16. PDF generation
+17. Layout guard and output guard checks
+18. Memory persistence
+19. Submission guidance assembly
+20. Response assembly
 
 ## 4. Service-Level Rules
 
@@ -115,6 +125,27 @@ Primary collections:
 - Enforce output within 1-2 pages in v1 mode.
 - Enforce minimum extractable text threshold.
 - Maintain ATS-friendly section naming and layout constraints.
+- Force single-column structure and prohibit text-box/table-based resume layout semantics.
+- Restrict section labels to predictable ATS-mapped headers (`Work Experience`, `Education`, `Skills`).
+
+### 4.4 Keyword and Achievement Contract
+
+- Keyword integration scoring should weight in-bullet contextual usage above isolated keyword dumps.
+- A detected acronym should be expanded on first use where token budget allows.
+- Achievement Normalizer should compute XYZ compliance and action-verb coverage metrics for Output Guard.
+
+### 4.5 Company Tailoring Contract
+
+- Tailor profile `google` emphasizes scale, algorithmic efficiency, and technical depth ordering.
+- Tailor profile `meta` emphasizes rapid iteration, experimentation, and product/user growth outcomes.
+- Tailor profile `amazon` emphasizes customer outcomes, cost/financial impact, and leadership-principle language.
+- Tailor profile `apple` emphasizes craftsmanship, quality/performance rigor, and privacy-focused engineering.
+- Tailor profile `netflix` emphasizes ownership, autonomy, and senior decision-making impact.
+
+### 4.6 Submission Guidance Contract
+
+- Response assembly should include a `submissionGuidance` payload recommending direct portal submission.
+- Guidance should include a concise warning against third-party parser distortion risk.
 
 ## 5. Observability Design
 
@@ -125,6 +156,8 @@ Trace and metadata should capture:
 - confidence and gate pass ratios
 - flagged bullet counts
 - low-fit warnings
+- XYZ compliance and action-verb coverage
+- ATS layout contract pass/fail flags
 - LLM token/cost indicators when available
 
 ## 6. Revision Governance
