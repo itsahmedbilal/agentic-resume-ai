@@ -1,13 +1,19 @@
 {
   "name": "Ahmed Bilal",
   "title": "Senior Full Stack Engineer (JavaScript / TypeScript)",
-  "summary": "Senior Full Stack Engineer with 5+ years of experience building scalable, high-performance web applications and distributed systems. Strong expertise in Angular, React, Node.js, and microservices architecture, with a proven ability to modernize legacy systems, implement real-time event-driven solutions, and improve developer productivity. Experienced in enterprise-grade environments, delivering secure and reliable applications with high test coverage, clean architecture, and strong engineering standards.",
+  "summary": "Senior Full Stack Engineer with 5+ years of experience building scalable, high-performance fintech and AI applications. Strong expertise in Angular, React, Node.js, FastAPI, and microservices architecture, with proven success modernizing legacy systems, implementing real-time event-driven solutions, and improving developer productivity. Experienced in enterprise-grade environments, delivering secure and reliable applications with high test coverage, clean architecture, strong accessibility standards, and CI/CD-driven delivery.",
   "contact": {
     "email": "ahmedbillal8@gmail.com",
     "phone": "+92 332 5444838",
     "linkedin": "https://linkedin.com/in/itsahmedbilal",
     "github": "https://github.com/itsahmedbilal",
-    "location": "Islamabad Capital Territory, Pakistan (Open to Relocate)"
+    "location": "Islamabad Capital Territory, Pakistan (Open to Relocate)",
+    "workPreferences": [
+      "Remote",
+      "Hybrid",
+      "On-site",
+      "Relocation"
+    ]
   },
   "skills": {
     "languages": [
@@ -36,12 +42,23 @@
       "Jest",
       "Jasmine",
       "Cypress",
+      "Playwright",
+      "Protractor",
+      "ngMocks",
       "Docker",
       "Kubernetes",
       "Solace",
       "BullMQ",
       "Sequelize ORM",
       "Webpack",
+      "Nx",
+      "Jenkins",
+      "SonarQube",
+      "JIRA",
+      "Confluence",
+      "Miro",
+      "SVN",
+      "Grunt",
       "Build Tools",
       "Git"
     ],
@@ -55,6 +72,27 @@
       "PostgreSQL",
       "MSSQL",
       "Redis"
+    ],
+    "architecture": [
+      "Microservices",
+      "Event-Driven Architecture",
+      "Clean Architecture",
+      "RESTful APIs",
+      "Low-Level Design",
+      "SSO Integration",
+      "Secure Session Handling"
+    ],
+    "practices": [
+      "Agile/Scrum",
+      "TDD",
+      "OOP",
+      "SOLID",
+      "DRY",
+      "KISS",
+      "MVC",
+      "MVVM",
+      "Technical Documentation",
+      "Accessibility (W3C/ARIA)"
     ]
   },
   "experience": [
@@ -62,6 +100,14 @@
       "company": "MobileLIVE (Remote – Canada)",
       "title": "Senior Full Stack Engineer",
       "duration": "May 2021 – Present",
+      "responsibilities": [
+        "Architect and deliver enterprise-grade frontend and full-stack solutions for regulated banking platforms.",
+        "Collaborate with product owners, UX designers, and backend engineers to design scalable, high-performance systems.",
+        "Build reusable components, shared services, and design-system assets to standardize implementation across products.",
+        "Implement dynamic forms, workflow orchestration, and secure API integrations for onboarding journeys.",
+        "Lead engineering standards through code reviews, mentorship, and architecture documentation.",
+        "Drive CI/CD and deployment reliability practices across development and release workflows."
+      ],
       "techStack": [
         "React",
         "Next.js",
@@ -91,8 +137,12 @@
         "Led transition from monolithic architecture to microservices, improving scalability by 50%.",
         "Developed backend microservices using Node.js and Express, with MongoDB change streams for real-time data synchronization.",
         "Achieved 86%+ test coverage using Jest, significantly improving system reliability.",
+        "Reduced production bugs by 20% through stronger automated testing and quality controls.",
+        "Automated release pipelines, reducing release times by 40% and improving delivery consistency.",
         "Mentored junior engineers and enforced clean code and architectural standards across the team.",
         "Authored technical documentation for design systems, reducing onboarding time and improving collaboration across teams.",
+        "Improved usability and accessibility, reducing onboarding drop-off by 15% through ARIA-first and adaptive UI improvements.",
+        "Improved runtime performance using lazy loading, event delegation, and static analysis practices for large-scale applications.",
         "Led frontend development for CIBC/Simplii Digital Core Banking platform with multi-step dynamic forms for account opening, mortgage onboarding, and AML/CAMLR compliance.",
         "Developed real-time microservice processing dashboard for ASG – ISBO / Student Deposit Program using Solace and MongoDB Change Streams.",
         "Architected complex, multi-step onboarding workflows leveraging Redux and RxJS orchestration, consistently maintaining Lighthouse performance scores above 95.",
@@ -105,6 +155,14 @@
       "company": "Baskt (Pakistan)",
       "title": "Frontend Developer",
       "duration": "Jun 2019 – May 2021",
+      "responsibilities": [
+        "Develop full-stack web features using Angular, Node.js, and Express.js for business-critical workflows.",
+        "Modernize legacy applications to newer Angular versions with improved stability and browser compatibility.",
+        "Build responsive, reusable, and accessibility-focused UI components in collaboration with design teams.",
+        "Participate in Agile rituals including sprint planning, backlog refinement, and cross-functional delivery alignment.",
+        "Apply static analysis and debugging practices to improve maintainability and resolve production issues.",
+        "Support engineering quality through testing practices and architecture-aligned refactoring."
+      ],
       "techStack": [
         "Angular",
         "TypeScript",
@@ -125,6 +183,9 @@
         "Developed full-stack features using Angular, Node.js, and Express.js.",
         "Improved code quality through strong TypeScript adoption, reducing bugs and increasing maintainability.",
         "Collaborated closely with design teams to deliver high-quality, user-focused UI/UX.",
+        "Migrated legacy applications to modern Angular versions, improving cross-browser compatibility and runtime performance.",
+        "Applied static code analysis and structured refactoring, improving maintainability by 25%.",
+        "Debugged and resolved production issues to improve overall application stability.",
         "Orchestrated the end-to-end migration of a legacy platform to the newest Angular ecosystem, resulting in a 25-30% improvement in core web vitals and overall system stability.",
         "Refactored the monolithic codebase following industry-standard scalable design patterns, significantly reducing technical debt and improving long-term maintainability.",
         "Championed Test-Driven Development (TDD) by integrating Jest and Cypress, elevating deployment confidence and dramatically reducing production-level bugs.",

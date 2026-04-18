@@ -9,7 +9,7 @@
 
 ### 1.1 Purpose of the System
 
-Agentic Resume AI is a self-hosted, CLI/API-driven backend system that transforms a single master profile into a tailored, ATS-optimized, single-page PDF resume — aligned to any job description submitted at runtime.
+Agentic Resume AI is a self-hosted, CLI/API-driven backend system that transforms a single master profile into a tailored, ATS-optimized PDF resume (single-page or two-page, based on content fit) — aligned to any job description submitted at runtime.
 
 ### 1.2 Problem Statement
 
@@ -30,7 +30,7 @@ The system maintains one master `profile.json` where every bullet is stored at t
 2. Detects the target persona (role type + primary tech stack)
 3. Selects the most relevant bullet variant per concept
 4. Rewrites and validates bullets against four quality gates
-5. Renders a single-page, ATS-safe PDF with exact JD terminology embedded in context
+5. Renders an ATS-safe PDF (single-page or two-page) with exact JD terminology embedded in context
 
 The result: every resume looks purpose-built for that role — while remaining 100% factually honest.
 
@@ -56,7 +56,7 @@ The result: every resume looks purpose-built for that role — while remaining 1
 | Bullet Gate Pass Rate | ≥ 85% of rewrites pass all 4 gates | `metadata.gatePassRate` |
 | Confidence Score | ≥ 0.75 per run | `metadata.confidenceScore` |
 | PDF Extractable Characters | ≥ 500 chars (ATS compliance floor) | Output Guard validation |
-| Page Count | Exactly 1 page | Output Guard validation |
+| Page Count | 1-2 pages | Output Guard validation |
 | LLM Calls Per Run | ≤ 10 (via caching) | `costStats.totalCalls` |
 | Generation Latency | < 45 seconds end-to-end | `trace.totalDurationMs` |
 | Cache Hit Rate | ≥ 40% after 10+ runs | `cacheStats.hitRatio` |
@@ -371,12 +371,12 @@ before confidence is computed. Gate 3 does not contribute a weighted score.
 | Field | Detail |
 |-------|--------|
 | **ID** | FR-013 |
-| **Title** | Render filtered profile to ATS-compliant single-page PDF |
+| **Title** | Render filtered profile to ATS-compliant PDF (1-2 pages) |
 | **Description** | Puppeteer renders the Handlebars-compiled HTML template to PDF. Strict ATS formatting rules are enforced at template level |
 | **Preconditions** | `filteredProfile` assembled; Handlebars template available |
 | **Flow** | 1. Compile Handlebars template with `filteredProfile` → 2. Launch Puppeteer → 3. Render HTML → 4. Export PDF with settings: no print headers/footers, Letter size, 0.4in margins → 5. Save to `output/resumes/resume_{runId}.pdf` |
 | **Postconditions** | PDF file saved; passed to Output Guard (FR-014) |
-| **Edge Cases** | Puppeteer crash → `500` with trace; content overflow beyond 1 page → Output Guard rejects → reduce `maxBulletsPerRole` by 1 and retry once |
+| **Edge Cases** | Puppeteer crash → `500` with trace; content overflow beyond 2 pages → Output Guard rejects → reduce `maxBulletsPerRole` by 1 and retry once |
 
 **ATS Template Rules (Non-Negotiable):**
 - Single-column layout only — no multi-column, no text boxes, no tables for layout
@@ -398,9 +398,9 @@ before confidence is computed. Gate 3 does not contribute a weighted score.
 | **Title** | Validate generated PDF for ATS compliance |
 | **Description** | The Output Guard verifies the PDF meets all ATS and quality thresholds before the response is returned |
 | **Preconditions** | PDF file exists at expected path |
-| **Flow** | 1. Verify file exists and size > 0 → 2. Extract text → verify ≥ 500 extractable characters → 3. Count pages → verify == 1 → 4. Verify metadata fields present (runId, generatedAt) → 5. Check keyword coverage ≥ configured threshold → 6. Check confidence score ≥ 0.65 → 7. All pass → approve; any fail → reject with specific failure code |
+| **Flow** | 1. Verify file exists and size > 0 → 2. Extract text → verify ≥ 500 extractable characters → 3. Count pages → verify pages are between 1 and 2 inclusive → 4. Verify metadata fields present (runId, generatedAt) → 5. Check keyword coverage ≥ configured threshold → 6. Check confidence score ≥ 0.65 → 7. All pass → approve; any fail → reject with specific failure code |
 | **Postconditions** | PDF approved or pipeline fails with specific guard error code |
-| **Edge Cases** | < 500 chars extracted → ATS compliance failure; > 1 page → overflow failure → trigger single retry with reduced bullets; keyword coverage < threshold → warn but do not block (log `lowCoverageWarning`) |
+| **Edge Cases** | < 500 chars extracted → ATS compliance failure; > 2 pages → overflow failure → trigger single retry with reduced bullets; keyword coverage < threshold → warn but do not block (log `lowCoverageWarning`) |
 
 ---
 
@@ -466,7 +466,7 @@ before confidence is computed. Gate 3 does not contribute a weighted score.
 |--------|----------------|
 | Keyword Coverage | `actual.keywordCoveragePct ≥ testCase.minKeywordCoverage` |
 | Bullet Count | `actual.bulletCount ≥ testCase.expectedMinBullets` |
-| Page Count | `actual.pages ≤ testCase.maxPages` (always 1) |
+| Page Count | `actual.pages ≤ testCase.maxPages` (default maxPages = 2) |
 | Skill Presence | All `expectedSkillsCovered` appear in extracted required skills |
 | Persona Match | `detectedPersona` matches `testCase.expectedPersona` |
 
@@ -843,8 +843,8 @@ semantic_cache  (1) per unique promptHash — upsert on collision
 9. Bullet Rewrite → Gemini rewrites 4 bullets; each passes all 4 gates; 0 fallbacks
 10. Profile Filter → title: "Frontend Developer — Angular & TypeScript"; projects filtered to Angular-tagged ones
 11. Summary Rewrite → summary now mentions "Angular 17", "RxJS", "fintech domain"
-12. PDF Generation → single-page, Arial font, single-column, "Work Experience" header
-13. Output Guard → 1 page ✓, 847 chars extractable ✓, keyword coverage 82% ✓
+12. PDF Generation → ATS-safe layout, Arial font, single-column, "Work Experience" header
+13. Output Guard → 1-2 pages ✓, 847 chars extractable ✓, keyword coverage 82% ✓
 14. Memory → episodic entry saved; 3 high-confidence bullets saved to example_store
 15. Response → { resumeId, pdfPath, metadata.keywordCoveragePct: 82 }
 ```
@@ -944,7 +944,7 @@ MONGODB_URI=...        # .env file; never committed to VCS
 | A-04 | Gemini 2.0 Flash (`gemini-2.0-flash-001`) model string is pinned; silent model upgrades would affect eval baselines |
 | A-05 | ATS systems are the primary gatekeeper — PDF formatting must satisfy machine parsing before human aesthetics |
 | A-06 | The user will apply via direct company portals, not LinkedIn Easy Apply (Easy Apply's parser distorts keyword data) |
-| A-07 | A single-page resume is mandatory for all target roles (mid-level engineer standard) |
+| A-07 | Resume length may be single-page or two-page based on role complexity and content relevance |
 | A-08 | AI-leveraged productivity is a legitimate, positive differentiator to include on the resume |
 
 ### 13.2 Risks & Mitigations

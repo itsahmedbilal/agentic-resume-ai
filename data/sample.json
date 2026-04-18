@@ -1,0 +1,120 @@
+{
+  "name": "Ahmed Bilal",
+  "title": "Senior Software Engineer / Full-Stack Engineer",
+  "summary": "Senior full-stack engineer with 5+ years of experience in developing high-performance fintech and AI applications. Proven expertise in Angular, React.js, Node.js, FastAPI, event-driven microservices, Nx monorepo architecture, and automated QA frameworks. Experienced in designing scalable, secure, and maintainable systems with strong frontend/backend ownership and DevOps expertise.",
+  "contact": {
+    "email": "contact@ahmedbillal8@gmail.com",
+    "phone": "+923325444838",
+    "linkedin": "https://linkedin.com/in/itsahmedbilal",
+    "github": "https://github.com/itsahmedbilal",
+    "location": "Islamabad, Pakistan"
+  },
+  "skills": {
+    "languages": [
+      "JavaScript",
+      "TypeScript",
+      "Python"
+    ],
+    "frontend": [
+      "Angular 16+",
+      "React.js",
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "Angular Material",
+      "Tailwind CSS",
+      "Sass/LESS",
+      "Design Systems",
+      "SSR/SSG",
+      "W3C Accessibility",
+      "Responsive Web Design",
+      "Micro-Frontends"
+    ],
+    "backend": [
+      "Node.js",
+      "Express.js",
+      "FastAPI",
+      "MongoDB",
+      "Solace",
+      "Redis",
+      "BullMQ",
+      "JWT",
+      "Microservices",
+      "Event-Driven Architecture"
+    ],
+    "tools": [
+      "Redux",
+      "RxJS",
+      "NgRx",
+      "Socket.io",
+      "Nx",
+      "Cypress",
+      "Playwright",
+      "Jest",
+      "Git",
+      "Docker",
+      "Kubernetes",
+      "CI/CD (Jenkins)",
+      "JIRA",
+      "Confluence",
+      "Miro"
+    ],
+    "architecture": [
+      "Low-Level Design",
+      "Clean Architecture",
+      "Microservices",
+      "Async Workflows",
+      "SSO Integration",
+      "RESTful API",
+      "Secure Session Handling"
+    ]
+  },
+  "experience": [
+    {
+      "company": "MobileLIVE, Toronto, Canada (Remote)",
+      "title": "Senior Software Engineer",
+      "duration": "May 2021 - Present",
+      "achievements": [
+        "Architected and led frontend development of CIBC/Simplii Digital Core Banking platform, enabling account opening, mortgage onboarding, and AML/CAMLR compliance workflows.",
+        "Built Nx monorepo architecture and enterprise design system supporting dynamic multi-step onboarding journeys with bilingual localization.",
+        "Implemented role-based task dashboards and exception-handling workflows for human-in-the-loop resolution of eligibility, AML, and API failures.",
+        "Integrated external systems including Canada Post API for address validation and backend services for eligibility checks.",
+        "Developed multi-step, API-driven forms with real-time validation, conditional logic, and workflow rehydration for partially failed onboarding flows.",
+        "Led frontend team, enforced coding standards, and collaborated with PMs and backend engineers to deliver regulated fintech solutions.",
+        "Modernized legacy ISBO onboarding system for CIBC/Simplii, replacing batch-based processing with real-time microservices, MongoDB Change Streams, and Solace messaging.",
+        "Built backend orchestration for GIC/Student Deposit recovery, event-driven state transitions, and async workflows, improving processing latency by 50%.",
+        "Owned CI/CD setup via Jenkins, environment promotion, deployment troubleshooting, and runtime log monitoring for high reliability.",
+        "Delivered Lucky Mobility Activation as a reusable React/TypeScript widget with a clean host integration contract, supporting 6-7 step activation flows and bilingual localization.",
+        "Implemented scalable Redux + RxJS epic architecture orchestrating OAuth, order initiation, submit/quit flows, session-timeout recovery, and global loading/error handling.",
+        "Built end-to-end local testing using a comprehensive Express mock API, improving reliability and developer efficiency.",
+        "Designed and implemented AgentQA, a cloud-native QA platform for automated testing of chatbots/conversational AI, supporting deterministic, LLM-based, and custom metrics evaluation.",
+        "Developed backend using Node.js/Express and PostgreSQL/MSSQL with Sequelize ORM for immutable/versioned test runs and multi-turn conversational evaluation.",
+        "Built async execution workers using BullMQ + Redis and Solace for high-volume test orchestration with snapshot-based result integrity.",
+        "Created frontend dashboards (Next.js SPA) for datasets, scenarios, test cases, and results inspection with conversation transcripts, evaluation matrices, and attachment/log viewers.",
+        "Integrated platform with CI/CD, secure session handling, and Azure Key Vault secrets for enterprise-grade deployment and operational reliability.",
+        "Developed FastAPI middleware microservice for FX chatbot interactions from Microsoft Teams, managing session state, multi-turn conversations, and metadata extraction.",
+        "Implemented async state machine workflows for commentary blasts, including draft handling, confirmation flows, and Redis-based flag management for reliability.",
+        "Orchestrated scalable deployments via Docker/Kubernetes, handling retries, logging, and error recovery for real-time financial messaging."
+      ]
+    },
+    {
+      "company": "Baskt, Islamabad, Pakistan",
+      "title": "Frontend Developer",
+      "duration": "Jun 2019 - May 2021",
+      "achievements": [
+        "Led Angular migration from 2+ to latest version, improving system stability, maintainability, and performance by 25-30%.",
+        "Refactored codebase per John Papa guidelines, implementing clean architecture and test-driven development.",
+        "Developed frontend features in collaboration with designers, optimizing UI/UX and implementing responsive, accessible web components."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Computer Science",
+      "institution": "National University of Computer and Emerging Sciences",
+      "year": "Jun 2019",
+      "location": "Islamabad, Pakistan"
+    }
+  ],
+  "certifications": []
+}
